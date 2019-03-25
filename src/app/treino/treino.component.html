@@ -1,0 +1,24 @@
+<mat-card style="width: 50%; margin: 20px;">
+    <mat-tab-group style="width: 100%;">
+        <mat-tab *ngFor="let treino of aluno.treinos" [label]="treino.nomeTreino">
+            <mat-table class="lessons-table mat-elevation-z8" [dataSource]="treino.exercicios">
+                <ng-container matColumnDef="exercicio">
+                    <mat-header-cell *matHeaderCellDef>Exercício</mat-header-cell>
+                    <mat-cell *matCellDef="let treino">{{treino.exercicio}}</mat-cell>
+                </ng-container>            
+                <ng-container matColumnDef="series">
+                    <mat-header-cell *matHeaderCellDef>Séries</mat-header-cell>
+                    <mat-cell class="description-cell"
+                                *matCellDef="let treino">{{treino.series}}</mat-cell>            
+                </ng-container>            
+                <ng-container matColumnDef="repeticoes">
+                    <mat-header-cell *matHeaderCellDef>Repetições</mat-header-cell>
+                    <mat-cell class="duration-cell"
+                                *matCellDef="let treino">{{treino.repeticoes}}</mat-cell>
+                </ng-container>            
+                <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>            
+                <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>        
+            </mat-table>
+        </mat-tab>
+    </mat-tab-group>
+</mat-card>

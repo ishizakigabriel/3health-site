@@ -9,6 +9,12 @@ import { AlunoProfileComponent } from './aluno-profile/aluno-profile.component';
 import { ProfessorProfileComponent } from './professor-profile/professor-profile.component';
 import { ProfessoresComponent } from './professores/professores.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { TreinoComponent } from './treino/treino.component';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatToolbarModule, MatTabsModule, MatTableModule, MatCardModule } from '@angular/material';
+import { from } from 'rxjs';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -19,10 +25,17 @@ import { AboutUsComponent } from './about-us/about-us.component';
     AlunoProfileComponent,
     ProfessorProfileComponent,
     ProfessoresComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    TreinoComponent,
+    FooterComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatTabsModule,
+    MatTableModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
